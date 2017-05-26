@@ -7,18 +7,39 @@
 </nav>
 <div class="container">
   <div class="well well-lg">
-    <form (ngSubmit)="onSubmit()" #movieQuoteForm="ngForm" >
+    <form (ngSubmit)="onSubmit()" #movieQuoteForm="ngForm">
       <div class="form-group">
-        <input required type="text" class="form-control" placeholder="Quote" name="quote" [(ngModel)]="movieQuote.quote"><br>
+        <input required type="text" class="form-control" placeholder="Quote" name="quote" [(ngModel)]="formMovieQuote.quote"><br>
       </div>
       <div class="form-group">
-        <input required type="text" class="form-control" placeholder="from Movie" name="movie" [(ngModel)]="movieQuote.movie">
+        <input required type="text" class="form-control" placeholder="from Movie" name="movie" [(ngModel)]="formMovieQuote.movie">
       </div>
-      <p *ngIf="movieQuote.movie && movieQuote.quote">
-        The best quote from <b>{{movieQuote.movie}}</b> is <b>"{{movieQuote.quote}}"</b>.
+      <p *ngIf="formMovieQuote.movie && formMovieQuote.quote">
+        The best quote from <b>{{formMovieQuote.movie}}</b> is <b>"{{formMovieQuote.quote}}"</b>.
       </p>
       <button [disabled]="!movieQuoteForm.form.valid" type="submit" class="btn btn-default pull-right">Submit</button>
       <div class="clearfix"></div>
     </form>
   </div>
+</div>
+<hr>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          Quote
+        </th>
+        <th>
+          Movie
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movieQuote of movieQuotes" >
+        <td>{{movieQuote.quote}}</td>
+        <td>{{movieQuote.movie}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
