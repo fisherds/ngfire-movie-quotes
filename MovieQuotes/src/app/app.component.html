@@ -1,4 +1,8 @@
 <h1>
   Movie Quotes
 </h1>
-{{movie}}
+<input type="text" placeholder="Quote" name="quote" [(ngModel)]="movieQuote.quote"><br>
+<input type="text" placeholder="from Movie" name="movie" [(ngModel)]="movieQuote.movie">
+<p *ngIf="movieQuote.movie && movieQuote.quote">
+  The best quote from <b>{{movieQuote.movie}}</b> is <b>"{{movieQuote.quote}}"</b>.
+</p>
