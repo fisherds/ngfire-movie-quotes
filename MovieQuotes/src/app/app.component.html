@@ -36,7 +36,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let movieQuote of movieQuotesStream | async" >
+      <tr *ngFor="let movieQuote of (movieQuotesStream | async) | reverse" >
         <td>{{movieQuote.quote}}</td>
         <td>{{movieQuote.movie}}</td>
       </tr>
