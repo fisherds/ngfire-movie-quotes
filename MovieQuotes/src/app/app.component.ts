@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 interface MovieQuote {
   movie: string;
@@ -14,7 +14,7 @@ interface MovieQuote {
 })
 export class AppComponent {
 
-  readonly quotesPath = "quotes";
+  readonly quotesPath = 'quotes';
 
   formMovieQuote: MovieQuote = {
     'quote': '',
@@ -23,10 +23,10 @@ export class AppComponent {
 
   // Local only solution
   // movieQuotes: Array<MovieQuote> = [
-  //   {"movie": "Rocky", "quote": "Yo Adrian"},
-  //   {"movie": "Terminator", "quote": "I'll be back"},
-  //   {"movie": "Titanic", "quote": "I'm the king of the world!"},
-  //   {"movie": "The Princess Bride", "quote": "Hello. My name is Inigo Montoya. You killed my father. Prepare to die."}
+  //   {'movie': 'Rocky', 'quote': 'Yo Adrian'},
+  //   {'movie': 'Terminator', 'quote': "I'll be back"},
+  //   {'movie': 'Titanic', 'quote': `I'm the king of the world!`},
+  //   {'movie': 'The Princess Bride', 'quote': 'Hello. My name is Inigo Montoya. You killed my father. Prepare to die.'}
   // ];
 
   movieQuotesStream: FirebaseListObservable<MovieQuote[]>;
@@ -50,7 +50,7 @@ export class AppComponent {
         'movie': ''
       };
     } catch (e) {
-      console.log("Form error:", e);
+      console.log('Form error:', e);
     }
   }
 
